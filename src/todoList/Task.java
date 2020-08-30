@@ -10,19 +10,22 @@ public class Task {
         this.taskName = name;
         this.labels = new HashMap();
     }
+    public void markTaskAsComplete(){
 
+    }
+///////////////prioity
     public void setPriority(int priority) {
         if(priority < 1 || priority > 4)
             System.out.println("Cant set a priority not in the range 1-4");
         else
             this.priority = priority;
     }
-    
+    ///////////////date
     public void setDate(String date){//year-month-date
         this.date= LocalDate.parse(date) ;
 
     }
-
+//////////////////label
     public void addLabel(String labelName){
         this.labels.put(labelName, labelName);
     }
@@ -35,5 +38,18 @@ public class Task {
 
     }
 
+    ///////////////subtask
+    public void addSubtask(){
+        
+    }
+    public void editSubtask(){
+        
+    }
+    public void removeSubtask(){
+        
+    }
+    public void markSubtaskAsComplete(){
+        
+    }
 
 }
