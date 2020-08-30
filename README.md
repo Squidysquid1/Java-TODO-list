@@ -1,14 +1,12 @@
 ## Getting Started
 
 Compile the App.java and run the jar file
+Made with OpenJDK version 14.0.2.12 not tested with any other versions.
 
 ## Folder Structure
 
-The workspace contains two folders by default, where:
-
 - `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+- `Builds`: the folder to maintain current .jar builds of the programs when avalible
 
-## Dependency Management
-
-The `JAVA DEPENDENCIES` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-pack/blob/master/release-notes/v0.9.0.md#work-with-jar-files-directly).
+## Dependencies
+The only dependacies are included with the OpenJDK version 14.0.2.12
