@@ -28,7 +28,7 @@ public class Task {
 //////////////////label
     public void addLabel(String labelName){
         this.labels.put(labelName, labelName);
-    }
+    }   
     public void deleteLabel(String labelName){
         if(this.labels.containsKey(labelName))
             this.labels.remove(labelName);
