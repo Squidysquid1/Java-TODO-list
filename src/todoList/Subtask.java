@@ -17,7 +17,7 @@ public class Subtask {
     }
     
     public void setName(String name){
-
+        this.taskName = name;
     }
     public void setDesc(String desc){
         this.taskDesc = desc;

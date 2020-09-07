@@ -2,7 +2,7 @@ package todoList;
 import java.util.ArrayList;
 
 public class UserTODOmanager {
-    ArrayList taskStorageArray = new ArrayList();
+    ArrayList<Task> taskStorageArray = new ArrayList<Task>();
     public void addNewTask(String taskName){
         taskStorageArray.add(new Task(taskName));
     }

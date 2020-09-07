@@ -1,14 +1,23 @@
 package todoList;
+
 import java.time.LocalDate;
 import java.util.HashMap;
+
+/*
+TODO:
+ - Possibly add a task object if I dont like how my current hashmap solution is working out but it seems to be working fine
+*/
 public class Task {
     String taskName = "";
     LocalDate date;
     int priority = 4;//default priority | lowest prio 1 is most important
-    HashMap labels;
+    HashMap<String,String> labels;//labelName , labelName 
+    HashMap<String,Subtask> subtaskMap;//
+
     Task(String name){
         this.taskName = name;
-        this.labels = new HashMap();
+        this.labels = new HashMap<String,String>();
+        subtaskMap = new HashMap<String,Subtask>();
     }
     public void markTaskAsComplete(){
 
@@ -29,7 +38,7 @@ public class Task {
     public void addLabel(String labelName){
         this.labels.put(labelName, labelName);
     }   
-    public void deleteLabel(String labelName){
+    public void removeLabel(String labelName){
         if(this.labels.containsKey(labelName))
             this.labels.remove(labelName);
         else
@@ -39,17 +48,30 @@ public class Task {
     }
 
     ///////////////subtask
-    public void addSubtask(){
-        
+    public void addSubtask(String name){
+        this.subtaskMap.put(name,new Subtask(name));
     }
-    public void editSubtask(){
-        
+    public void addSubtask(String name,String desc){
+        this.subtaskMap.put(name,new Subtask(name,desc));
     }
-    public void removeSubtask(){
-        
+
+    public Subtask getSubtask(String subtaskName){
+        return this.subtaskMap.get(subtaskName);
     }
-    public void markSubtaskAsComplete(){
-        
+    public void editSubtask(String subtaskName, Subtask s){
+        Subtask subTask = this.subtaskMap.get(subtaskName);
+    }
+    public void removeSubtask(String subtaskName){
+        this.subtaskMap.remove(subtaskName);
+    }
+    
+    public void markSubtaskAsComplete(String subtaskName){
+        Subtask subtask = this.subtaskMap.get(subtaskName);
+        subtask.setCompleted(true);
+    }
+    public void markSubtaskAsNotComplete(String subtaskName){
+        Subtask subtask = this.subtaskMap.get(subtaskName);
+        subtask.setCompleted(false);
     }
 
 }
